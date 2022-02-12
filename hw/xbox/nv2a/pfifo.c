@@ -421,7 +421,7 @@ static void pfifo_run_pusher(NV2AState *d)
                 SET_MASK(*dma_state, NV_PFIFO_CACHE1_DMA_STATE_ERROR,
                          NV_PFIFO_CACHE1_DMA_STATE_ERROR_RESERVED_CMD);
                 // break;
-                assert(false);
+                // assert(false);
             }
         }
 
@@ -438,7 +438,7 @@ static void pfifo_run_pusher(NV2AState *d)
     uint32_t error = GET_MASK(*dma_state, NV_PFIFO_CACHE1_DMA_STATE_ERROR);
     if (error) {
         NV2A_DPRINTF("pb error: %d\n", error);
-        assert(false);
+        // assert(false);
 
         SET_MASK(*dma_push, NV_PFIFO_CACHE1_DMA_PUSH_STATUS, 1); /* suspended */
 
